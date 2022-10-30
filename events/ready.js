@@ -6,6 +6,6 @@ module.exports = {
      * @param {import('discord.js').Client} client 
      */
     run: async (client) => {
-        console.log(`Logged into: ` + client.user.tag);
+        console.log(`Logged into ` + client.user.tag);
     }
 };
