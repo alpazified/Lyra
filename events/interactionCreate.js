@@ -14,6 +14,17 @@ module.exports = {
         if (!interaction.inGuild() || !interaction.inCachedGuild()) {
             return;
         }
+
+        // Checks if a user is in allowed IDs list
+        if (!config.values.guilds.allowedIds.includes(interaction.user.id)) {
+            const noPerms = new EmbedBuilder()
+                .setDescription(config.values.common.error.noPerms
+                    .replace('{function}', 'function'))
+                .setColor(Colors.Red);
+
+            return interaction.reply({ embeds: [noPerms], ephemeral: true });
+        };
+
         // Checks for the command
         const command = client.slashCommands.get(interaction.commandName);
 
