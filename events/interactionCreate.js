@@ -14,7 +14,7 @@ module.exports = {
         if (!interaction.inGuild() || !interaction.inCachedGuild()) {
             return;
         }
-
+        console.log(config.values.allowedIds);
         // Checks if a user is in allowed IDs list
         if (!config.values.guilds.allowedIds.includes(interaction.user.id)) {
             const noPerms = new EmbedBuilder()
@@ -37,7 +37,7 @@ module.exports = {
         } else if (command) {
 
             // Checks if the user's ID is in the list of allowed users 
-            if (config.values.guilds.allowedIds.includes(interaction.user.id)) {
+            if (!config.values.guilds.allowedIds.includes(interaction.user.id)) {
                 const noPerms = new EmbedBuilder()
                     .setDescription(config.values.common.error.noPerms)
                     .setColor(Colors.Red)

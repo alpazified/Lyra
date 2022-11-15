@@ -148,6 +148,7 @@ const config = {
         common: {
             devId: "784250655212044308",
             error: {
+                invalidCase: "The case ID provided was invalid.",
                 unableToDM: "I was unable to DM the banned user.",
                 invalidCommand: "It seems you've encountered an invalid command. Report this issue to <@784250655212044308>",
                 genericError: "You've run into an error, report this issue to <@784250655212044308>",
@@ -163,17 +164,19 @@ const config = {
             DMBanNotice: "You've been banned from {server_name} for {reason}. Due to the severity of your ban, you've also been banned from the servers below. If you're interested in appealing, join the appeal server here: https://discord.gg/MyvBb67feh"
         },
         guilds: {
-            allowedIds: [],
+            allowedIds: ['784250655212044308'],
             guilds: [
                 keyLabs = {
                     id: "948416750305812481",
                     logsId: "1031407397773774898",
-                    name: "Key Labs"
+                    name: "Key Labs",
+                    ban: true
                 },
                 testing = {
                     id: "998391282516897952",
                     logsId: "1036127804904968245",
-                    name: "Testing Server"
+                    name: "Testing Server",
+                    ban: true
                 },
             ],
         },
